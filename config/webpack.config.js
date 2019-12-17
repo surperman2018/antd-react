@@ -324,7 +324,6 @@ module.exports = function(webpackEnv) {
     module: {
       strictExportPresence: true,
       rules: [
-        
 
         // Disable require.ensure as it's not a standard language feature.
         { parser: { requireEnsure: false } },
@@ -349,6 +348,7 @@ module.exports = function(webpackEnv) {
           include: paths.appSrc,
         },
         {
+          
           // "oneOf" will traverse all following loaders until one will
           // match the requirements. When no loader matches it will fall
           // back to the "file" loader at the end of the loader list.
@@ -356,6 +356,7 @@ module.exports = function(webpackEnv) {
             // "url" loader works like "file" loader except that it embeds assets
             // smaller than specified limit in bytes as data URLs to avoid requests.
             // A missing `test` is equivalent to a match.
+            
             {
               test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
               loader: require.resolve('url-loader'),
@@ -477,6 +478,8 @@ module.exports = function(webpackEnv) {
             },
             // Adds support for CSS Modules, but using SASS
             // using the extension .module.scss or .module.sass
+
+
             {
               test: sassModuleRegex,
               use: getStyleLoaders(
@@ -505,6 +508,7 @@ module.exports = function(webpackEnv) {
               },
               }],
             },
+            
 
             // "file" loader makes sure those assets get served by WebpackDevServer.
             // When you `import` an asset, you get its (virtual) filename.

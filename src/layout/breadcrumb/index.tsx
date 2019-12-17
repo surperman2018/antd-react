@@ -19,7 +19,7 @@ const AppBreadcrumb: React.FC<{}> = function AppBreadcrumb() {
   }
 
   return (
-    <Breadcrumb style={{ margin: "16px 0" }}>
+    <Breadcrumb style={{ margin: "16px",}}>
       {
         breadcrumb.map((item, index: number) => (
           <Breadcrumb.Item key={index}>

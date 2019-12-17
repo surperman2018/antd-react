@@ -21,11 +21,10 @@ export default function useRouteInfo() {
         ids = path.split('/');
         ids.shift();
         const match = siderConfig.find(item=>item.id === ids[0]);
-        if (match) {
+        if (match && match.children) {
             ids[1]=match.children.length===1? match.children[0].id : `${ids[0]}-${ids[1]}`;
         }
      }
-     console.log(ids);
      return ids;
    },[path])
 
